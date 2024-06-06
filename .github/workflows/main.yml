@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: "./gradlew assembleDebug"
       - name: Check
-        run: "./gradlew testDebug lintDebug"
+        run: "./gradlew testDebug jacocoTestReport lintDebug"
