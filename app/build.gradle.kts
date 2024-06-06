@@ -1,6 +1,8 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    // `id` but not `alias` due to https://github.com/gradle/gradle/issues/20084#issuecomment-1060822638
+    id(libs.plugins.androidApplication.get().pluginId)
+    id(libs.plugins.jetbrainsKotlinAndroid.get().pluginId)
+    id(libs.plugins.jacocoReports.get().pluginId)
 }
 
 android {
