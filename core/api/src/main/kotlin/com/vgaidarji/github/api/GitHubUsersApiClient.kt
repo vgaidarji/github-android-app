@@ -8,17 +8,17 @@ import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-class UsersApiClient(retrofit: Retrofit) : UsersApi {
-    interface UsersService {
+class GitHubUsersApiClient(retrofit: Retrofit) : GitHubUsersApi {
+    interface GitHubUsersService {
         @GET("users/{name}")
-        suspend fun getUser(@Path("name")name: String): GitHubUserResponse
+        suspend fun getGitHubUser(@Path("name")name: String): GitHubUserResponse
     }
 
-    private val service = retrofit.create(UsersService::class.java)
+    private val service = retrofit.create(GitHubUsersService::class.java)
 
-    override suspend fun getUser(name: String): GitHubUser {
+    override suspend fun getGitHubUser(name: String): GitHubUser {
         return withContext(IO) {
-            service.getUser(name).toModel()
+            service.getGitHubUser(name).toModel()
         }
     }
 }

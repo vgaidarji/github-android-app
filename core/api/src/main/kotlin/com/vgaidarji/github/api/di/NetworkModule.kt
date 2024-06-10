@@ -1,7 +1,7 @@
 package com.vgaidarji.github.api.di
 
-import com.vgaidarji.github.api.UsersApi
-import com.vgaidarji.github.api.UsersApiClient
+import com.vgaidarji.github.api.GitHubUsersApi
+import com.vgaidarji.github.api.GitHubUsersApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,7 +42,7 @@ class NetworkModule {
 
   @Singleton
   @Provides
-  fun provideUserApi(retrofit: Retrofit): UsersApi {
-    return UsersApiClient(retrofit)
+  fun provideUserApi(retrofit: Retrofit): GitHubUsersApi {
+    return GitHubUsersApiClient(retrofit)
   }
 }
