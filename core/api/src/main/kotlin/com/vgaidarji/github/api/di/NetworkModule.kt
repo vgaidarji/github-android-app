@@ -1,5 +1,6 @@
 package com.vgaidarji.github.api.di
 
+import com.vgaidarji.github.api.ApiTokenInterceptor
 import com.vgaidarji.github.api.GitHubUsersApi
 import com.vgaidarji.github.api.GitHubUsersApiClient
 import dagger.Module
@@ -13,6 +14,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -28,6 +30,17 @@ class NetworkModule {
       isLenient = true
       ignoreUnknownKeys = true
     }.asConverterFactory("application/json".toMediaType())
+  }
+
+  @Singleton
+  @Provides
+  fun provideOkHttpClient(): OkHttpClient {
+    return OkHttpClient.Builder()
+      .connectTimeout(10L, TimeUnit.SECONDS)
+      .writeTimeout(10L, TimeUnit.SECONDS)
+      .readTimeout(30L, TimeUnit.SECONDS)
+      .addInterceptor(ApiTokenInterceptor())
+      .build()
   }
 
   @Singleton

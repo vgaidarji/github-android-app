@@ -1,14 +1,27 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     id(libs.plugins.jetbrainsKotlinAndroid.get().pluginId)
-    id(libs.plugins.kotlinKapt.get().pluginId)
     alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.daggerHilt)
+    id(libs.plugins.daggerHilt.get().pluginId)
+    id(libs.plugins.kotlinKapt.get().pluginId)
 }
 
 android {
     namespace = "com.vgaidarji.github.api"
     compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        val githubApiToken: String = gradleLocalProperties(rootDir, providers).getProperty("GITHUB_API_TOKEN") ?: "\"\""
+        buildConfigField("String", "GITHUB_API_TOKEN", githubApiToken)
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -30,8 +43,4 @@ dependencies {
     implementation(libs.retrofit.converter)
     implementation(libs.okhttp)
     implementation(libs.coroutines.core)
-}
-
-kapt {
-    correctErrorTypes = true
 }
