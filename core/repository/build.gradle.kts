@@ -8,10 +8,10 @@ plugins {
 
 android {
     namespace = "com.vgaidarji.github.repository"
-    compileSdk = 34
+    compileSdk = AppConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk = 24
+        minSdk = AppConfig.MIN_SDK_VERSION
     }
 
     compileOptions {
@@ -19,13 +19,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = AppConfig.JVM_TARGET
     }
 }
 
 dependencies {
-    api(project(":model"))
-    api(project(":core:api"))
+    api(project(AppConfig.Modules.MODEL))
+    api(project(AppConfig.Modules.CORE_API))
 
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)

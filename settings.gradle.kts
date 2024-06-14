@@ -20,6 +20,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "GitHub Android Application"
+
+// register new modules in buildSrc/AppConfig for future references in build files
 include(":app")
 include(":base")
 include(":feature:profile")

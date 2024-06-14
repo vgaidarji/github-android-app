@@ -8,15 +8,15 @@ plugins {
 }
 
 android {
-    namespace = "com.vgaidarji.github.app"
-    compileSdk = 34
+    namespace = AppConfig.PACKAGE_NAME
+    compileSdk = AppConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId = "com.vgaidarji.github.app"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = AppConfig.PACKAGE_NAME
+        minSdk = AppConfig.MIN_SDK_VERSION
+        targetSdk = AppConfig.TARGET_SDK_VERSION
+        versionCode = AppConfig.VERSION_CODE
+        versionName = AppConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,7 +35,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = AppConfig.JVM_TARGET
     }
     buildFeatures {
         viewBinding = true
@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:repository"))
+    implementation(project(AppConfig.Modules.CORE_REPOSITORY))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

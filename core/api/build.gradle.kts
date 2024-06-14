@@ -10,10 +10,10 @@ plugins {
 
 android {
     namespace = "com.vgaidarji.github.api"
-    compileSdk = 34
+    compileSdk = AppConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk = 24
+        minSdk = AppConfig.MIN_SDK_VERSION
 
         val githubApiToken: String = gradleLocalProperties(rootDir, providers).getProperty("GITHUB_API_TOKEN") ?: "\"\""
         buildConfigField("String", "GITHUB_API_TOKEN", githubApiToken)
@@ -28,12 +28,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = AppConfig.JVM_TARGET
     }
 }
 
 dependencies {
-    api(project(":model"))
+    api(project(AppConfig.Modules.MODEL))
 
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)

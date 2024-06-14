@@ -7,10 +7,10 @@ plugins {
 
 android {
     namespace = "com.vgaidarji.github.profile"
-    compileSdk = 34
+    compileSdk = AppConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk = 24
+        minSdk = AppConfig.MIN_SDK_VERSION
     }
 
     compileOptions {
@@ -18,7 +18,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = AppConfig.JVM_TARGET
     }
     buildFeatures {
         viewBinding = true
@@ -26,8 +26,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":base"))
-    implementation(project(":app"))
+    implementation(project(AppConfig.Modules.BASE))
+    implementation(project(AppConfig.Modules.APP))
 
     implementation(libs.androidx.constraintlayout)
 
