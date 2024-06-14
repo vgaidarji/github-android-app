@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid
+package com.vgaidarji.github
 
 import org.junit.Test
 

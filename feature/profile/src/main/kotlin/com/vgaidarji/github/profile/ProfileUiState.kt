@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid.ui.profile
+package com.vgaidarji.github.profile
 
 import com.vgaidarji.github.model.GitHubUser
 

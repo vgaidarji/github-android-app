@@ -21,6 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "GitHub Android Application"
 include(":app")
+include(":base")
+include(":feature:profile")
 include(":core:api")
 include(":core:repository")
 include(":model")

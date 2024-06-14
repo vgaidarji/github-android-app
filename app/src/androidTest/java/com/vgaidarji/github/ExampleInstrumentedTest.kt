@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid
+package com.vgaidarji.github
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

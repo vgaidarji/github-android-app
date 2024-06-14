@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.vgaidarji.githubandroid"
+    namespace = "com.vgaidarji.github.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.vgaidarji.githubandroid"
+        applicationId = "com.vgaidarji.github.app"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

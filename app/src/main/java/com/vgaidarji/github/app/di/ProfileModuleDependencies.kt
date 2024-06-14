@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid.di
+package com.vgaidarji.github.app.di
 
 import com.vgaidarji.github.repository.GitHubUserRepository
 import dagger.hilt.EntryPoint

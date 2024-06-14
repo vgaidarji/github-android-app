@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid.ui.starred
+package com.vgaidarji.github.app.ui.starred
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

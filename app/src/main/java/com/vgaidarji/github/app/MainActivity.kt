@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid
+package com.vgaidarji.github.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.vgaidarji.githubandroid.databinding.ActivityMainBinding
+import com.vgaidarji.github.app.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

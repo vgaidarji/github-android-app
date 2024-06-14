@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid.ui.repositories
+package com.vgaidarji.github.app.ui.repositories
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.vgaidarji.githubandroid.databinding.FragmentRepositoriesBinding
+import com.vgaidarji.github.app.databinding.FragmentRepositoriesBinding
 
 class RepositoriesFragment : Fragment() {
 

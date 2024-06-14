@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid.ui.profile
+package com.vgaidarji.github.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.vgaidarji.githubandroid.databinding.FragmentProfileBinding
+import com.vgaidarji.github.profile.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

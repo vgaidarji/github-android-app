@@ -1,4 +1,4 @@
-package com.vgaidarji.githubandroid.ui.repositories
+package com.vgaidarji.github.app.ui.repositories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

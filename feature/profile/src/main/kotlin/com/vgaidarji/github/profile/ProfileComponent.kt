@@ -1,7 +1,7 @@
-package com.vgaidarji.githubandroid.ui.profile
+package com.vgaidarji.github.profile
 
 import android.content.Context
-import com.vgaidarji.githubandroid.di.ProfileModuleDependencies
+import com.vgaidarji.github.app.di.ProfileModuleDependencies
 import dagger.BindsInstance
 import dagger.Component
 
