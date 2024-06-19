@@ -38,5 +38,4 @@ dependencies {
     kapt(libs.dagger.compiler)
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
-
 }
