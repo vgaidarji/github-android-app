@@ -21,7 +21,9 @@ val excludedFiles = mutableSetOf(
     "**/*Component*",
     "**/*Test*.*",
     "**/*Activity*.*",
-    "**android**"
+    "**/*AndroidApplication*",
+    "**/*Binding*",
+    "**android**",
 )
 
 tasks.register<JacocoReport>("jacocoTestReport") {
@@ -36,7 +38,7 @@ tasks.register<JacocoReport>("jacocoTestReport") {
         "${buildDir}/tmp/kotlin-classes/debug"
     ) { exclude(excludedFiles) }
 
-    val coverageSrcDirectories = listOf("src/main/java")
+    val coverageSrcDirectories = listOf("src/main/kotlin")
     classDirectories.setFrom(files(javaDirectories, kotlinDirectories))
     additionalClassDirs.setFrom(files(coverageSrcDirectories))
     sourceDirectories.setFrom(files(coverageSrcDirectories))

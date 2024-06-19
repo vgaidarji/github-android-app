@@ -2,8 +2,8 @@ pluginManagement {
     repositories {
         google {
             content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("com.android.*")
+                includeGroupByRegex("com.google.*")
                 includeGroupByRegex("androidx.*")
             }
         }
@@ -20,4 +20,11 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "GitHub Android Application"
+
+// register new modules in buildSrc/AppConfig for future references in build files
 include(":app")
+include(":base")
+include(":feature:profile")
+include(":core:api")
+include(":core:repository")
+include(":model")
