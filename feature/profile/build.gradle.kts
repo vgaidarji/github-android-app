@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.vgaidarji.github.profile"
+    namespace = "com.vgaidarji.droidhub.profile"
     compileSdk = AppConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
@@ -27,7 +27,6 @@ android {
 
 dependencies {
     implementation(project(AppConfig.Modules.BASE))
-    implementation(project(AppConfig.Modules.APP))
 
     implementation(libs.androidx.constraintlayout)
 
