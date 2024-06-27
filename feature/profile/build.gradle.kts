@@ -1,6 +1,7 @@
 plugins {
     id(libs.plugins.androidLibrary.get().pluginId)
     id(libs.plugins.jetbrainsKotlinAndroid.get().pluginId)
+    alias(libs.plugins.composeCompiler)
     id(libs.plugins.daggerHilt.get().pluginId)
     id(libs.plugins.kotlinKapt.get().pluginId)
 }
@@ -21,7 +22,7 @@ android {
         jvmTarget = AppConfig.JVM_TARGET
     }
     buildFeatures {
-        viewBinding = true
+        compose = true
     }
 }
 
@@ -29,11 +30,15 @@ dependencies {
     implementation(project(AppConfig.Modules.BASE))
 
     implementation(libs.androidx.constraintlayout)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.ui.android)
 
     implementation(libs.dagger)
+    implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.lifecycle.runtime.compose.android)
+    implementation(libs.androidx.ui.tooling.preview.android)
+    debugImplementation(libs.androidx.ui.tooling)
     kapt(libs.dagger.compiler)
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
