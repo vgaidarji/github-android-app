@@ -39,6 +39,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose.android)
     implementation(libs.androidx.ui.tooling.preview.android)
     debugImplementation(libs.androidx.ui.tooling)
+    implementation(libs.coil)
+
     kapt(libs.dagger.compiler)
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
