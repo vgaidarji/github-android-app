@@ -1,5 +1,6 @@
 package com.vgaidarji.droidhub.profile
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +46,7 @@ fun ProfileScreenLoadingPreview() {
     }
 }
 
-@Preview (widthDp = 320, heightDp = 320)
+@Preview(showSystemUi = true)
 @Composable
 fun ProfileScreenUserPreview() {
     val user = GitHubUser(
